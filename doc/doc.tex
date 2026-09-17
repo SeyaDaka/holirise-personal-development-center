@@ -1,0 +1,475 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in, headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath,amssymb}
+\usepackage{cleveref}
+
+\definecolor{primary}{HTML}{1B4965}
+\definecolor{accent}{HTML}{5FA8D3}
+\definecolor{highlight}{HTML}{CAE9FF}
+\definecolor{success}{HTML}{2D6A4F}
+\definecolor{warning}{HTML}{E76F51}
+\definecolor{codebg}{HTML}{F0F4F8}
+\definecolor{codeframe}{HTML}{D1D5DB}
+\definecolor{linkcolor}{HTML}{0077B6}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=linkcolor,
+    citecolor=accent,
+    pdftitle={HOLIRISE Personal Development Center},
+    pdfauthor={Dr Seydie Mebrie},
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{primary}{\textsc{Holirise PDC}}}
+\fancyhead[R]{\textcolor{accent}{\thepage}}
+\fancyfoot[C]{\textcolor{gray}{\small Documentation v1.2 -- September 2026}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{accent!80!primary}}{\thesubsection}{1em}{}
+
+\lstset{
+    backgroundcolor=\color{codebg},
+    frame=single,
+    rulecolor=\color{codeframe},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{primary}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{success},
+    breaklines=true,
+    columns=flexible,
+    showstringspaces=false,
+    tabsize=2,
+}
+
+\lstdefinelanguage{JavaScript}{
+    keywords={const, let, var, function, return, if, else, for, while,
+              import, export, default, from, new, class, true, false, null},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]",
+}
+
+\newtcolorbox{notebox}[1][Note]{
+    colback=highlight!40,
+    colframe=accent,
+    fonttitle=\bfseries\color{white},
+    title={#1},
+    sharp corners,
+    boxrule=0.6pt,
+}
+
+\newtcolorbox{tipbox}[1][Tip]{
+    colback=success!10,
+    colframe=success,
+    fonttitle=\bfseries\color{white},
+    title={#1},
+    sharp corners,
+    boxrule=0.6pt,
+}
+
+\newtcolorbox{warnbox}[1][Warning]{
+    colback=warning!10,
+    colframe=warning,
+    fonttitle=\bfseries\color{white},
+    title={#1},
+    sharp corners,
+    boxrule=0.6pt,
+}
+
+\newtcolorbox{codebox}[1][Listing]{
+    colback=codebg,
+    colframe=codeframe,
+    fonttitle=\bfseries\color{primary},
+    title={#1},
+    sharp corners,
+    boxrule=0.4pt,
+}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries\color{primary} Holirise}\\[0.4cm]
+{\LARGE\color{accent} Personal Development Center}\\[1.2cm]
+
+\rule{\textwidth}{1pt}\\[0.5cm]
+{\Large Project Documentation}\\[0.3cm]
+\rule{\textwidth}{1pt}
+
+\vfill
+
+{\large\color{gray}
+\begin{tabular}{rl}
+\textbf{Version:} & 1.2 \\
+\textbf{Date:}    & September 17, 2026 \\
+\textbf{Authors:} & Dr Seydie Mebrie \\
+\end{tabular}
+}
+
+\vspace{1cm}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+The \textbf{HOLIRISE Personal Development Center} is the official
+website of a purpose-driven organization based in Dessie, Ethiopia,
+dedicated to personal growth, leadership and community development.
+It is built with \textbf{React 18} and \textbf{Vite}.  This document
+provides architecture overviews, development guidelines, and
+deployment instructions.
+
+\begin{notebox}
+This documentation is a living document.  Update it whenever the
+codebase changes significantly.
+\end{notebox}
+
+\begin{warnbox}[Copyright]
+Developed By Birhanu Asmerom \textcopyright{} 2026 HOLIRISE Personal
+Development Center. All Rights Reserved.
+\end{warnbox}
+
+\section{Tech Stack}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Category} & \textbf{Technology} \\
+\midrule
+Framework   & React 18.3 \\
+Build Tool  & Vite 5.4 \\
+CSS         & Bootstrap 5.3 + Bootstrap Icons \\
+Module Type & ES Modules \\
+\bottomrule
+\end{tabular}
+\caption{Core dependencies.}
+\end{table}
+
+\section{Getting Started}
+
+\subsection{Prerequisites}
+
+\begin{itemize}[leftmargin=*, label=\textcolor{accent}{$\bullet$}]
+    \item Node.js $\geq$ 18
+    \item npm or yarn
+\end{itemize}
+
+\subsection{Installation}
+
+\begin{codebox}[Terminal]
+\begin{lstlisting}[language=bash]
+# Clone the repository
+git clone https://github.com/SeyaDaka/holirise-personal-development-center.git
+cd holirise-personal-development-center
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+\end{lstlisting}
+\end{codebox}
+
+\begin{tipbox}
+Run \texttt{npm run build} to create an optimised production build
+inside \texttt{dist/}.
+\end{tipbox}
+
+\section{Project Structure}
+
+\begin{codebox}[Directory Tree]
+\begin{lstlisting}[language=bash]
+holirise-personal-development-center/
+  |- public/              # Static assets
+  |   |- favicon.svg      # Site favicon
+  |   |- images/          # Team photos, logos, media
+  |- src/                 # Application source code
+  |   |- components/      # Reusable UI components
+  |   |   |- About.jsx        |- Approach.jsx
+  |   |   |- Contact.jsx      |- ContactForm.jsx
+  |   |   |- CTA.jsx          |- Footer.jsx
+  |   |   |- Hero.jsx         |- HoliriseLogo.jsx
+  |   |   |- Impact.jsx       |- Navbar.jsx
+  |   |   |- ProgramCard.jsx  |- Programs.jsx
+  |   |   |- Team.jsx         |- Values.jsx
+  |   |   |- Vision.jsx
+  |   |- data/            # siteData.js (all site content)
+  |   |- styles.css       # Global custom styles
+  |   |- App.jsx          # Root component
+  |   |- main.jsx         # Entry point
+  |- doc/                 # Project documentation (this folder)
+  |- dist/                # Production build output
+  |- index.html           # HTML entry point
+  |- vite.config.js       # Vite configuration
+  |- package.json
+\end{lstlisting}
+\end{codebox}
+
+The \texttt{components/} folder currently contains 15 components,
+each corresponding to a page section or reusable UI element.  The
+\texttt{public/images/} folder holds the team photographs and the
+Holirise business card asset.
+
+\section{Available Scripts}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Command} & \textbf{Description} \\
+\midrule
+\texttt{npm run dev}    & Start development server \\
+\texttt{npm run build}  & Build for production \\
+\texttt{npm run preview}& Preview production build \\
+\bottomrule
+\end{tabular}
+\caption{Available npm scripts.}
+\end{table}
+
+\section{Configuration}
+
+Vite configuration lives in \texttt{vite.config.js}.  The project
+uses the official \texttt{@vitejs/plugin-react} plugin.
+
+\begin{warnbox}
+Do not commit secrets or API keys.  Use environment variables
+(\texttt{.env}) for sensitive configuration.
+\end{warnbox}
+
+\section{Contact Information}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Field} & \textbf{Value} \\
+\midrule
+Phone     & +251 911 81 91 69 \\
+Email     & seymeb2007@gmail.com \\
+Website   & \href{https://www.holirise.com}{www.holirise.com} \\
+Address   & Dessie, Ethiopia \\
+Facebook  & \href{https://web.facebook.com/seydie.ali}{seydie.ali} \\
+Telegram  & \href{https://t.me/seyfreedom}{@seyfreedom} \\
+LinkedIn  & \href{https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/}{Seydie Mebrie Ali} \\
+GitHub    & \href{https://github.com/SeyaDaka}{SeyaDaka} \\
+\bottomrule
+\end{tabular}
+\caption{Organization contact details.}
+\end{table}
+
+\section{Content Management}
+
+All site content (hero text, programs, values, team members, contact
+details) lives in \texttt{src/data/siteData.js}.  Components read from
+this single source of truth, so content changes require no component
+edits.
+
+Team member entries support an optional \texttt{photo} field pointing
+to an image in \texttt{public/images/}.  When present, the avatar in the Team
+section renders the photo; otherwise initials are shown.
+
+\begin{codebox}[Team Member Entry]
+\begin{lstlisting}[language=JavaScript]
+{
+  name: "Dr Seydie Mebrie",
+  role: "Founder & Director",
+  bio: "Leads the center's vision of holistic growth, ...",
+  initials: "SM",
+  photo: "/images/Dr Seydie Mebrie.jpg",
+  socials: [
+    { icon: "bi-github",
+      url: "https://github.com/SeyaDaka",
+      label: "GitHub" },
+    { icon: "bi-linkedin",
+      url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+      label: "LinkedIn" },
+    { icon: "bi-envelope-fill",
+      url: "mailto:seymeb2007@gmail.com",
+      label: "Email" },
+  ],
+}
+\end{lstlisting}
+\end{codebox}
+
+\subsection{Social Links}
+
+The footer social links are configured in the \texttt{footer.socials}
+array of \texttt{siteData.js}:
+
+\begin{codebox}[Footer Socials]
+\begin{lstlisting}[language=JavaScript]
+socials: [
+  { name: "Facebook",
+    icon: "bi-facebook",
+    url: "https://web.facebook.com/seydie.ali" },
+  { name: "Telegram",
+    icon: "bi-telegram",
+    url: "https://t.me/seyfreedom" },
+  { name: "LinkedIn",
+    icon: "bi-linkedin",
+    url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/" },
+  { name: "GitHub",
+    icon: "bi-github",
+    url: "https://github.com/SeyaDaka" },
+  { name: "Instagram",
+    icon: "bi-instagram",
+    url: "#" },
+]
+\end{lstlisting}
+\end{codebox}
+
+\begin{notebox}
+To add or remove a social link, simply edit the \texttt{footer.socials}
+array.  Use any Bootstrap Icon class name for the \texttt{icon} field.
+\end{notebox}
+
+\begin{tipbox}
+After editing \texttt{siteData.js}, run \texttt{npm run build} and
+verify the rendered page before deploying.
+\end{tipbox}
+
+\section{Deployment}
+
+\subsection{Deploy to GitHub Pages}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}]
+    \item Create a GitHub repository and push your code.
+    \item Install the deploy tool:
+\end{enumerate}
+
+\begin{codebox}[Terminal]
+\begin{lstlisting}[language=bash]
+npm install -D gh-pages
+\end{lstlisting}
+\end{codebox}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}, start=3]
+    \item Add deploy scripts to \texttt{package.json}:
+\end{enumerate}
+
+\begin{codebox}[package.json]
+\begin{lstlisting}[language=JavaScript]
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+\end{lstlisting}
+\end{codebox}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}, start=4]
+    \item Deploy:
+\end{enumerate}
+
+\begin{codebox}[Terminal]
+\begin{lstlisting}[language=bash]
+npm run deploy
+\end{lstlisting}
+\end{codebox}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}, start=5]
+    \item Go to \textbf{Settings > Pages} in your GitHub repo.
+          The site will be live at:
+          \texttt{https://<username>.github.io/<repo-name>/}
+\end{enumerate}
+
+\begin{notebox}
+Repository: \href{https://github.com/SeyaDaka/holirise-personal-development-center}{github.com/SeyaDaka/holirise-personal-development-center}
+\end{notebox}
+
+\subsection{Deploy to Vercel}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}]
+    \item Push your code to GitHub.
+    \item Log in to \href{https://vercel.com}{vercel.com} and click
+          \textbf{"Add New Project"}.
+    \item Import your GitHub repository.
+    \item Vercel auto-detects Vite --- confirm the settings:
+\end{enumerate}
+
+\begin{codebox}[Vercel Build Settings]
+\begin{lstlisting}
+Build command:   npm run build
+Output directory: dist
+\end{lstlisting}
+\end{codebox}
+
+\begin{enumerate}[leftmargin=*, label=\textcolor{accent}{\arabic*.}, start=5]
+    \item Click \textbf{Deploy}.  Your site goes live instantly.
+    \item Every push to the repository auto-deploys a new version.
+\end{enumerate}
+
+\begin{tipbox}[Vercel Tips]
+\begin{itemize}[leftmargin=*, label=\textcolor{success}{$\bullet$}]
+    \item Custom domains: go to \textbf{Settings > Domains} in the
+          Vercel dashboard and add your domain.
+    \item Environment variables: add \texttt{.env} values under
+          \textbf{Settings > Environment Variables}.
+    \item Preview deployments: every pull request gets its own preview URL.
+\end{itemize}
+\end{tipbox}
+
+\section{Improvements}
+
+\subsection{Performance}
+\begin{itemize}[leftmargin=*, label=\textcolor{accent}{$\bullet$}]
+    \item \textbf{Image optimization} --- compress team photos using
+          \href{https://squoosh.app}{Squoosh} or
+          \href{https://tinypng.com}{TinyPNG}.  Use WebP format.
+    \item \textbf{Lazy loading} --- add \texttt{loading="lazy"} to
+          \texttt{<img>} tags below the fold.
+    \item \textbf{Code splitting} --- use \texttt{React.lazy()} and
+          \texttt{Suspense} to split components into bundles.
+\end{itemize}
+
+\subsection{SEO}
+\begin{itemize}[leftmargin=*, label=\textcolor{accent}{$\bullet$}]
+    \item Add \texttt{<title>} and \texttt{<meta name="description">}
+          in \texttt{index.html}.
+    \item Add Open Graph meta tags (\texttt{og:title}, \texttt{og:description},
+          \texttt{og:image}) for social sharing.
+    \item Create \texttt{robots.txt} and \texttt{sitemap.xml} in
+          the \texttt{public/} folder.
+\end{itemize}
+
+\subsection{Accessibility}
+\begin{itemize}[leftmargin=*, label=\textcolor{accent}{$\bullet$}]
+    \item Ensure all images have meaningful \texttt{alt} attributes.
+    \item Test keyboard navigation through all interactive elements.
+    \item Verify color contrast ratios meet WCAG AA standards.
+\end{itemize}
+
+\subsection{Security}
+\begin{itemize}[leftmargin=*, label=\textcolor{accent}{$\bullet$}]
+    \item Set security headers (\texttt{X-Content-Type-Options},
+          \texttt{X-Frame-Options}, \texttt{Content-Security-Policy}).
+    \item Enable HTTPS with a free SSL certificate from
+          \href{https://letsencrypt.org}{Let's Encrypt}.
+\end{itemize}
+
+\end{document}
