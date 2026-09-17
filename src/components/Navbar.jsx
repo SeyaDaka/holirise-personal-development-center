@@ -5,6 +5,7 @@ import { siteData } from "../data/siteData";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
@@ -26,9 +27,7 @@ export default function Navbar() {
   const scrollTo = (e, href) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    const toggler = document.querySelector(".navbar-toggler");
-    const collapse = document.querySelector(".navbar-collapse.show");
-    if (collapse && toggler) toggler.click();
+    setMenuOpen(false);
   };
 
   return (
@@ -38,23 +37,29 @@ export default function Navbar() {
       aria-label="Main navigation"
     >
       <div className="container">
-        <a className="navbar-brand" href="#home" onClick={(e) => scrollTo(e, "#home")}>
+        <a
+          className="navbar-brand"
+          href="#home"
+          onClick={(e) => scrollTo(e, "#home")}
+        >
           <HoliriseLogo size="small" />
         </a>
 
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
           aria-controls="navbarContent"
-          aria-expanded="false"
+          aria-expanded={menuOpen}
           aria-label="Toggle navigation"
+          onClick={() => setMenuOpen((open) => !open)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarContent">
+        <div
+          className={`collapse navbar-collapse${menuOpen ? " show" : ""}`}
+          id="navbarContent"
+        >
           <ul className="navbar-nav ms-auto align-items-lg-center gap-1">
             {siteData.navLinks.map((link) => (
               <li className="nav-item" key={link.href}>
@@ -62,7 +67,9 @@ export default function Navbar() {
                   className={`nav-link ${activeSection === link.href ? "active" : ""}`}
                   href={link.href}
                   onClick={(e) => scrollTo(e, link.href)}
-                  aria-current={activeSection === link.href ? "page" : undefined}
+                  aria-current={
+                    activeSection === link.href ? "page" : undefined
+                  }
                 >
                   {link.label}
                 </a>
