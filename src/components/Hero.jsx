@@ -23,7 +23,9 @@ export default function Hero() {
               {hero.headline.split(hero.highlightWord).map((part, i) => (
                 <React.Fragment key={i}>
                   {part}
-                  {i === 0 && <span className="text-lime">{hero.highlightWord}</span>}
+                  {i === 0 && (
+                    <span className="text-lime">{hero.highlightWord}</span>
+                  )}
                 </React.Fragment>
               ))}
             </h1>
@@ -34,7 +36,8 @@ export default function Hero() {
                 className="btn btn-lime btn-lg"
                 onClick={(e) => scrollTo(e, "#programs")}
               >
-                {hero.primaryCta} <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                {hero.primaryCta}{" "}
+                <i className="bi bi-arrow-right ms-2" aria-hidden="true"></i>
               </a>
               <a
                 href="#contact"
@@ -54,11 +57,19 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="col-lg-6 hero-visual" data-animate="fade-up" data-delay="200">
+          <div
+            className="col-lg-6 hero-visual"
+            data-animate="fade-up"
+            data-delay="200"
+          >
             <div className="hero-card-wrapper">
-              <div className="hero-card floating" role="img" aria-label="HOLIRISE Personal Development Center business card">
+              <div
+                className="hero-card floating"
+                role="img"
+                aria-label="HOLIRISE Personal Development Center business card"
+              >
                 <img
-                  src="/images/holirise-business-card.svg"
+                  src="/images/holirise-business-card.png"
                   alt="HOLIRISE Personal Development Center business card"
                   className="hero-card-img"
                   loading="eager"
@@ -67,8 +78,14 @@ export default function Hero() {
                 />
               </div>
               {hero.badges.map((badge, i) => (
-                <div className={`hero-badge hero-badge-${i}`} key={i} aria-hidden="true">
-                  <i className={`bi bi-${i === 0 ? "star-fill" : "people-fill"} me-2`}></i>
+                <div
+                  className={`hero-badge hero-badge-${i}`}
+                  key={i}
+                  aria-hidden="true"
+                >
+                  <i
+                    className={`bi bi-${i === 0 ? "star-fill" : "people-fill"} me-2`}
+                  ></i>
                   {badge}
                 </div>
               ))}
@@ -77,7 +94,11 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-scroll-indicator" aria-hidden="true">
-        <a href="#about" onClick={(e) => scrollTo(e, "#about")} aria-label="Scroll to about section">
+        <a
+          href="#about"
+          onClick={(e) => scrollTo(e, "#about")}
+          aria-label="Scroll to about section"
+        >
           <i className="bi bi-chevron-double-down"></i>
         </a>
       </div>
