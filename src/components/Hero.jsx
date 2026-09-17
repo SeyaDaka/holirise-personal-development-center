@@ -69,7 +69,7 @@ export default function Hero() {
                 aria-label="HOLIRISE Personal Development Center business card"
               >
                 <img
-                  src="/images/holirise-business-card.png"
+                  src={`${import.meta.env.BASE_URL}images/holirise-business-card.png`}
                   alt="HOLIRISE Personal Development Center business card"
                   className="hero-card-img"
                   loading="eager"
