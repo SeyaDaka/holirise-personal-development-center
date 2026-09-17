@@ -35,7 +35,6 @@ export default function Navbar() {
     <nav
       className={`navbar navbar-expand-lg navbar-dark fixed-top ${scrolled ? "navbar-scrolled" : ""}`}
       id="mainNav"
-      role="navigation"
       aria-label="Main navigation"
     >
       <div className="container">

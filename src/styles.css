@@ -561,6 +561,24 @@ a { text-decoration: none; transition: color var(--ease); }
   margin: 0;
 }
 
+/* Approach Timeline */
+.approach-timeline {
+  position: relative;
+}
+.approach-line {
+  position: absolute;
+  top: 36px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--lime));
+  opacity: 0.2;
+  z-index: 0;
+}
+@media (max-width: 991.98px) {
+  .approach-line { display: none; }
+}
+
 /* ============================================
    VALUES
    ============================================ */
@@ -1017,4 +1035,163 @@ a { text-decoration: none; transition: color var(--ease); }
   .impact-card { padding: 28px 20px; }
   .about-feature-card { padding: 20px 18px; }
   .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+}
+
+/* ============================================
+    MOBILE NAVBAR — Custom Styles (≤991px)
+    ============================================ */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(6,63,48,0.98);
+    backdrop-filter: blur(16px);
+    border-radius: 0 0 16px 16px;
+    margin: 8px -12px 0;
+    padding: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    border: 1px solid rgba(183,217,61,0.1);
+  }
+  .navbar-nav {
+    padding: 0;
+    margin: 0;
+  }
+  .navbar-nav .nav-item {
+    margin: 0;
+  }
+  .navbar-nav .nav-link {
+    padding: 12px 16px !important;
+    font-size: 1rem;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    background: rgba(183,217,61,0.12);
+  }
+  .navbar-nav .btn-nav-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    padding: 12px 24px !important;
+  }
+  .navbar-toggler {
+    border-color: rgba(255,255,255,0.4);
+    padding: 8px 12px;
+  }
+  .navbar-toggler-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ============================================
+    TOUCH INTERACTION STYLES
+    ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  .about-feature-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  .program-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  .value-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  .impact-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  .team-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  .btn-lime:active {
+    transform: scale(0.96);
+  }
+  .hero-buttons .btn:active {
+    transform: scale(0.96);
+  }
+  .footer-social-link:active {
+    transform: scale(0.9);
+  }
+  .team-social-link:active {
+    transform: scale(0.9);
+  }
+}
+
+/* ============================================
+    FORM INPUTS — Touch Target Improvements
+    ============================================ */
+@media (max-width: 767.98px) {
+  .form-control,
+  .form-select {
+    padding: 14px 16px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+  .form-label {
+    font-size: 0.95rem;
+  }
+  .contact-form-card textarea.form-control {
+    min-height: 120px;
+  }
+}
+
+/* ============================================
+    HERO — Mobile Landscape & Short Viewports
+    ============================================ */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+  .hero-content {
+    padding: 80px 0 20px;
+  }
+}
+
+/* ============================================
+    SECTION HEADINGS — Mobile Consistency
+    ============================================ */
+@media (max-width: 767.98px) {
+  .section-subheading {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+  .hero-visual {
+    padding: 20px 0 40px;
+  }
+  .hero-card-wrapper {
+    max-width: 300px;
+  }
+  .hero-card {
+    padding: 12px;
+  }
+}
+
+/* ============================================
+    MOBILE NAVBAR — Extra Small (≤375px)
+    ============================================ */
+@media (max-width: 375px) {
+  .navbar-collapse {
+    padding: 12px;
+    margin: 8px -8px 0;
+  }
+  .navbar-nav .nav-link {
+    padding: 10px 12px !important;
+    font-size: 0.92rem;
+  }
+  .hero-headline {
+    font-size: 1.6rem;
+  }
+  .section-heading {
+    font-size: 1.4rem;
+  }
+  .cta-heading {
+    font-size: 1.4rem;
+  }
 }

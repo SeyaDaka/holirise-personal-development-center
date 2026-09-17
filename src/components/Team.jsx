@@ -15,7 +15,7 @@ export default function Team() {
 
         <div className="row g-4">
           {team.members.map((member, i) => (
-            <div className="col-sm-6 col-lg-3" key={member.name} data-animate="fade-up" data-delay={i * 100}>
+            <div className="col-sm-6 col-lg-3" key={i} data-animate="fade-up" data-delay={i * 100}>
               <article className="team-card" aria-label={`${member.name}, ${member.role}`}>
                 <div className="team-avatar" aria-hidden="true">
                   {member.photo ? (

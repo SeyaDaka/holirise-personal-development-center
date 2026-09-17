@@ -173,8 +173,13 @@ export const siteData = {
     ],
   },
 
-  impact: [
-    {
+  impact: {
+    label: "COMMUNITY IMPACT",
+    heading: "Creating Lasting Change",
+    description:
+      "Our work creates meaningful impact across personal, professional and community dimensions.",
+    items: [
+      {
       icon: "bi-graph-up-arrow",
       title: "Personal Growth",
       desc: "Building confidence, resilience and self-awareness.",
@@ -194,7 +199,8 @@ export const siteData = {
       title: "Community",
       desc: "Encouraging people to contribute to positive community transformation.",
     },
-  ],
+    ],
+  },
 
   team: {
     label: "OUR PEOPLE",
