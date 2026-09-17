@@ -11,7 +11,8 @@ export const siteData = {
     email: "info@holirise.com",
     address: "Dessie, Ethiopia",
     director: "Director | HOLIRISE Personal Development Center",
-    copyright: "Developed By Birhanu Asmerom \u00a9 2026 HOLIRISE Personal Development Center. All Rights Reserved.",
+    copyright:
+      "Developed By Birhanu Asmerom \u00a9 2026 HOLIRISE Personal Development Center. All Rights Reserved.",
   },
 
   navLinks: [
@@ -43,21 +44,40 @@ export const siteData = {
     label: "WHO WE ARE",
     heading: "A Place Where Growth Becomes a Way of Life.",
     text: "HOLIRISE Personal Development Center is a purpose-driven organization based in Dessie, Ethiopia, dedicated to holistic personal and community growth. We believe that when individuals discover their potential and develop practical skills, they create meaningful change\u2014in their own lives, their families, and their communities.",
-    text2: "Through mentorship, training, and community-centered programs, we foster leadership, life skills, wellbeing, and lifelong learning. Our work is rooted in the conviction that every person has the capacity to grow, lead, and contribute positively to the world around them.",
+    text2:
+      "Through mentorship, training, and community-centered programs, we foster leadership, life skills, wellbeing, and lifelong learning. Our work is rooted in the conviction that every person has the capacity to grow, lead, and contribute positively to the world around them.",
     features: [
-      { icon: "bi-person-hearts", title: "Mentorship", desc: "Guiding individuals toward self-discovery and growth." },
-      { icon: "bi-easel", title: "Training", desc: "Practical learning experiences for real-world impact." },
-      { icon: "bi-award", title: "Leadership", desc: "Developing confident, responsible leaders." },
-      { icon: "bi-people", title: "Community", desc: "Strengthening communities through empowered individuals." },
+      {
+        icon: "bi-person-hearts",
+        title: "Mentorship",
+        desc: "Guiding individuals toward self-discovery and growth.",
+      },
+      {
+        icon: "bi-easel",
+        title: "Training",
+        desc: "Practical learning experiences for real-world impact.",
+      },
+      {
+        icon: "bi-award",
+        title: "Leadership",
+        desc: "Developing confident, responsible leaders.",
+      },
+      {
+        icon: "bi-people",
+        title: "Community",
+        desc: "Strengthening communities through empowered individuals.",
+      },
     ],
   },
 
   vision: {
     icon: "bi-compass",
     label: "OUR VISION",
-    heading: "A flourishing generation with purpose, skills and positive influence.",
+    heading:
+      "A flourishing generation with purpose, skills and positive influence.",
     text: "HOLIRISE envisions individuals and communities where people understand themselves, lead responsibly, support one another and create positive solutions. We see a future where personal growth and community wellbeing go hand in hand.",
-    quote: "Growth begins with a direction \u2014 flourishing grows through action.",
+    quote:
+      "Growth begins with a direction \u2014 flourishing grows through action.",
   },
 
   programs: {
@@ -103,10 +123,26 @@ export const siteData = {
     description:
       "We combine reflection with practical action so participants can apply what they learn beyond the classroom.",
     steps: [
-      { num: "01", title: "Discover", desc: "Identify strengths, needs, values and goals." },
-      { num: "02", title: "Develop", desc: "Build knowledge, habits, skills and confidence." },
-      { num: "03", title: "Practice", desc: "Apply learning through projects and real-life challenges." },
-      { num: "04", title: "Flourish", desc: "Create positive change in personal and community life." },
+      {
+        num: "01",
+        title: "Discover",
+        desc: "Identify strengths, needs, values and goals.",
+      },
+      {
+        num: "02",
+        title: "Develop",
+        desc: "Build knowledge, habits, skills and confidence.",
+      },
+      {
+        num: "03",
+        title: "Practice",
+        desc: "Apply learning through projects and real-life challenges.",
+      },
+      {
+        num: "04",
+        title: "Flourish",
+        desc: "Create positive change in personal and community life.",
+      },
     ],
   },
 
@@ -138,10 +174,26 @@ export const siteData = {
   },
 
   impact: [
-    { icon: "bi-graph-up-arrow", title: "Personal Growth", desc: "Building confidence, resilience and self-awareness." },
-    { icon: "bi-people-fill", title: "Leadership", desc: "Developing responsible and effective leaders." },
-    { icon: "bi-tools", title: "Skills", desc: "Providing practical knowledge for everyday life and work." },
-    { icon: "bi-hands-heart", title: "Community", desc: "Encouraging people to contribute to positive community transformation." },
+    {
+      icon: "bi-graph-up-arrow",
+      title: "Personal Growth",
+      desc: "Building confidence, resilience and self-awareness.",
+    },
+    {
+      icon: "bi-people-fill",
+      title: "Leadership",
+      desc: "Developing responsible and effective leaders.",
+    },
+    {
+      icon: "bi-tools",
+      title: "Skills",
+      desc: "Providing practical knowledge for everyday life and work.",
+    },
+    {
+      icon: "bi-hands-heart",
+      title: "Community",
+      desc: "Encouraging people to contribute to positive community transformation.",
+    },
   ],
 
   team: {
@@ -155,11 +207,23 @@ export const siteData = {
         role: "Founder & Director",
         bio: "Leads the center's vision of holistic growth, with over a decade of experience in community development and education.",
         initials: "SM",
-        photo: "/images/Dr Seydie Mebrie.jpg",
+        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
         socials: [
-          { icon: "bi-github", url: "https://github.com/SeyaDaka", label: "GitHub" },
-          { icon: "bi-linkedin", url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/", label: "LinkedIn" },
-          { icon: "bi-envelope-fill", url: "mailto:seymeb2007@gmail.com", label: "Email" },
+          {
+            icon: "bi-github",
+            url: "https://github.com/SeyaDaka",
+            label: "GitHub",
+          },
+          {
+            icon: "bi-linkedin",
+            url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+            label: "LinkedIn",
+          },
+          {
+            icon: "bi-envelope-fill",
+            url: "mailto:seymeb2007@gmail.com",
+            label: "Email",
+          },
         ],
       },
       {
@@ -167,10 +231,18 @@ export const siteData = {
         role: "Programs Coordinator",
         bio: "Designs and delivers practical training in leadership, teamwork and personal development for youth and professionals.",
         initials: "DB",
-        photo: "/images/Dr Seydie Mebrie.jpg",
+        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
         socials: [
-          { icon: "bi-linkedin", url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/", label: "LinkedIn" },
-          { icon: "bi-envelope-fill", url: "mailto:seymeb2007@gmail.com", label: "Email" },
+          {
+            icon: "bi-linkedin",
+            url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+            label: "LinkedIn",
+          },
+          {
+            icon: "bi-envelope-fill",
+            url: "mailto:seymeb2007@gmail.com",
+            label: "Email",
+          },
         ],
       },
       {
@@ -178,10 +250,18 @@ export const siteData = {
         role: "Mentorship & Training Lead",
         bio: "Coordinates mentorship circles and life-skills workshops that help participants turn learning into confident action.",
         initials: "ST",
-        photo: "/images/Dr Seydie Mebrie.jpg",
+        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
         socials: [
-          { icon: "bi-linkedin", url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/", label: "LinkedIn" },
-          { icon: "bi-envelope-fill", url: "mailto:seymeb2007@gmail.com", label: "Email" },
+          {
+            icon: "bi-linkedin",
+            url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+            label: "LinkedIn",
+          },
+          {
+            icon: "bi-envelope-fill",
+            url: "mailto:seymeb2007@gmail.com",
+            label: "Email",
+          },
         ],
       },
       {
@@ -189,10 +269,18 @@ export const siteData = {
         role: "Community Engagement Officer",
         bio: "Builds partnerships with schools, institutions and local communities to extend the center's impact across Dessie.",
         initials: "YG",
-        photo: "/images/Dr Seydie Mebrie.jpg",
+        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
         socials: [
-          { icon: "bi-linkedin", url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/", label: "LinkedIn" },
-          { icon: "bi-envelope-fill", url: "mailto:seymeb2007@gmail.com", label: "Email" },
+          {
+            icon: "bi-linkedin",
+            url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+            label: "LinkedIn",
+          },
+          {
+            icon: "bi-envelope-fill",
+            url: "mailto:seymeb2007@gmail.com",
+            label: "Email",
+          },
         ],
       },
     ],
@@ -206,7 +294,8 @@ export const siteData = {
 
   contact: {
     heading: "Let\u2019s Build a Flourishing Future Together.",
-    description: "Reach out for programs, partnerships, training, mentorship or general information.",
+    description:
+      "Reach out for programs, partnerships, training, mentorship or general information.",
     phones: ["+251 911 81 91 69"],
     website: "https://www.holirise.com",
     websiteDisplay: "www.holirise.com",
@@ -222,11 +311,20 @@ export const siteData = {
   },
 
   footer: {
-    description: "Learn. Grow. Flourish. Building people and communities with purpose.",
+    description:
+      "Learn. Grow. Flourish. Building people and communities with purpose.",
     socials: [
-      { name: "Facebook", icon: "bi-facebook", url: "https://web.facebook.com/seydie.ali" },
+      {
+        name: "Facebook",
+        icon: "bi-facebook",
+        url: "https://web.facebook.com/seydie.ali",
+      },
       { name: "Telegram", icon: "bi-telegram", url: "https://t.me/seyfreedom" },
-      { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/" },
+      {
+        name: "LinkedIn",
+        icon: "bi-linkedin",
+        url: "https://www.linkedin.com/in/seydie-mebrie-ali-phd-4b020840/",
+      },
       { name: "GitHub", icon: "bi-github", url: "https://github.com/SeyaDaka" },
       { name: "Instagram", icon: "bi-instagram", url: "#" },
     ],
