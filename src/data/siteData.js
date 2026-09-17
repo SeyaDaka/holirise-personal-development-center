@@ -207,7 +207,7 @@ export const siteData = {
         role: "Founder & Director",
         bio: "Leads the center's vision of holistic growth, with over a decade of experience in community development and education.",
         initials: "SM",
-        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
+        photo: `${import.meta.env.BASE_URL}images/Dr Seydie Mebrie.jpg`,
         socials: [
           {
             icon: "bi-github",
@@ -231,7 +231,7 @@ export const siteData = {
         role: "Programs Coordinator",
         bio: "Designs and delivers practical training in leadership, teamwork and personal development for youth and professionals.",
         initials: "DB",
-        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
+        photo: `${import.meta.env.BASE_URL}images/Dr Seydie Mebrie.jpg`,
         socials: [
           {
             icon: "bi-linkedin",
@@ -250,7 +250,7 @@ export const siteData = {
         role: "Mentorship & Training Lead",
         bio: "Coordinates mentorship circles and life-skills workshops that help participants turn learning into confident action.",
         initials: "ST",
-        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
+        photo: `${import.meta.env.BASE_URL}images/Dr Seydie Mebrie.jpg`,
         socials: [
           {
             icon: "bi-linkedin",
@@ -269,7 +269,7 @@ export const siteData = {
         role: "Community Engagement Officer",
         bio: "Builds partnerships with schools, institutions and local communities to extend the center's impact across Dessie.",
         initials: "YG",
-        photo: `${import.meta.env.BASE_URL}images/holirise-business-card.png`,
+        photo: `${import.meta.env.BASE_URL}images/Dr Seydie Mebrie.jpg`,
         socials: [
           {
             icon: "bi-linkedin",
